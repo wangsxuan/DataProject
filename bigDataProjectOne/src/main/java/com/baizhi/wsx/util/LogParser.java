@@ -23,6 +23,7 @@ public class LogParser {
      */
     public static LoginSuccessData parserLoginSuccessData(String loginSuccessLog) throws ParseException {
         Matcher matcher = SUCCESS_PATTERN.matcher(loginSuccessLog);
+        matcher.matches();
         /*  提取数据
         * */
 
@@ -47,6 +48,7 @@ public class LogParser {
 
     public static EvaluateData parserEvaluateData(String evaluateLog) throws ParseException {
         Matcher matcher = EVAL_PATTERN.matcher(evaluateLog);
+        matcher.matches();
         // 提取数据
         // long
         long currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(matcher.group(1)).getTime();
